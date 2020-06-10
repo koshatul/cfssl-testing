@@ -1,0 +1,10 @@
+{
+    "profile": "client",
+    "request": {
+        "CN": "user",
+        "key": {
+            "algo": "ecdsa",
+            "size": 256
+        }
+    }
+}

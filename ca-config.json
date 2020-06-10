@@ -1,0 +1,63 @@
+{
+    "signing": {
+        "default": {
+            "expiry": "262800h"
+        },
+        "profiles": {
+            "ca": {
+                "expiry": "262800h",
+                "ca_constraint": {
+                    "is_ca": true
+                },
+                "auth_key": "ca-auth",
+                "usages": [
+                    "digital signature",
+                    "cert sign",
+                    "crl sign",
+                    "signing"
+                ]
+            },
+            "interca": {
+                "expiry": "262800h",
+                "ca_constraint": {
+                    "is_ca": true,
+                    "max_path_len": 0,
+                    "max_path_len_zero": true
+                },
+                "auth_key": "ca-auth",
+                "usages": [
+                    "digital signature",
+                    "cert sign",
+                    "crl sign",
+                    "signing"
+                ]
+            },
+            "server": {
+                "expiry": "262800h",
+                "backdate": "24h",
+                "usages": [
+                    "signing",
+                    "key encipherment",
+                    "server auth"
+                ],
+                "UseSerialSeq": true
+            },
+            "client": {
+                "expiry": "262800h",
+                "backdate": "24h",
+                "usages": [
+                    "signing",
+                    "key encipherment",
+                    "client auth"
+                ],
+                "UseSerialSeq": true
+            }
+        }
+    },
+    "auth_keys": {
+        "ca-auth": {
+            "type": "standard",
+            "key": "0123456789ABCDEF0123456789ABCDEF"
+        }
+    }
+}
